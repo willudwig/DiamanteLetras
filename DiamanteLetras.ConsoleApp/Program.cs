@@ -87,7 +87,7 @@ namespace DiamanteLetras.ConsoleApp
             //encaixando as letras de forma decrescente
             for (int k = 1; k < numLetra; k++)
             {
-                for (int i = (vazio.Length - 1); i > 1; i--)
+                for (int i = vazio.Length - 1; i > 1; i--)
                 {
                     if (vazio[meio - 1 ] == ' ')
                     {
