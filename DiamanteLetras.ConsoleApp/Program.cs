@@ -11,12 +11,12 @@ namespace DiamanteLetras.ConsoleApp
             int numLetra = 0;
             int contAlfabeto = 1;
 
-            //Input da letra
-            Console.Write("Digiete a letra: ");
+            //input da letra
+            Console.Write("Digite a letra: ");
             char letra = Convert.ToChar(Console.ReadLine().ToUpper());
             Console.WriteLine("\n");
             
-            //encontrar o índice do meio da letra
+            //encontrar o que representa a letra
             for (int i = 0; i < alfabeto.Length; i++)
             {
                 if (alfabeto[i] == letra)
@@ -24,10 +24,11 @@ namespace DiamanteLetras.ConsoleApp
                     numLetra = i + 1;
                 }
             }
+            
             int distancia = (numLetra - 1) + numLetra;
-            meio = distancia / 2;
-
             char[] vazio = new char[distancia];
+            meio = distancia / 2;
+           
 
             //preenchendo o array vazio com espaços.
             for (int i = 0; i < vazio.Length; i++)
@@ -35,14 +36,13 @@ namespace DiamanteLetras.ConsoleApp
                 vazio[i] = ' ';
             }
 
-            //imprimindo a linha 1
+            //imprimindo a linha 1: 'A'
             for (int i = 0; i < vazio.Length; i++)
             {
                 if (i == meio)
                 {
                     vazio[i] = alfabeto[0];
                     Console.Write(vazio[i]);
-                   
                 }
                 else
                     Console.Write(vazio[i]);
@@ -105,17 +105,12 @@ namespace DiamanteLetras.ConsoleApp
                         c++;
                         Console.WriteLine("\n");
                         contAlfabeto--;
+
                         if (contAlfabeto == -1) break;
                     }
                     if (contAlfabeto == -1) break;
                 }
                 if (contAlfabeto == -1) break;
-            }
-
-            //preenchendo o array vazio com espaços.
-            for (int i = 0; i < vazio.Length; i++)
-            {
-                vazio[i] = ' ';
             }
 
             Console.ReadKey();  
